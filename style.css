@@ -1,0 +1,125 @@
+:root {
+  --clockSize: 400px;
+  --clockDot: 20px;
+  --clockColor: black;
+  --background: white;
+  border: ;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+}
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--background);
+}
+
+.clock {
+  height: var(--clockSize);
+  width: var(--clockSize);
+  border: 10px solid var(--clockColor);
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clockColor);
+}
+
+.horas {
+  position: absolute;
+  height: 100%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  transform: rotate(calc(30deg * var(--i)));
+}
+
+.number {
+  transform: rotate(calc(-30deg * var(--i)));
+  display: block;
+}
+
+.dot {
+  height: var(--clockDot);
+  width: var(--clockDot);
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background-color: var(--clockColor);
+  font-size: 2rem;
+  z-index: 100;
+  border: 1px solid grey;
+}
+.ponteiros {
+  position: absolute;
+  background-color: var(--clockColor);
+  bottom: 50%;
+  left: 50%;
+  border-radius: 10px;
+  transform-origin: bottom;
+  margin-bottom: -10px;
+  margin-left: 4px;
+}
+
+.ponteiro_horas {
+  height: 30%;
+  width: 15px;
+  background-color: var(--clockColor);
+  z-index: 3;
+  border: 1px solid black;
+}
+.ponteiro_minutos {
+  z-index: 2;
+  border: 1px solid black;
+  height: 39%;
+  width: 13px;
+  background-color: var(--clockColor);
+}
+.ponteiro_segundos {
+  z-index: 4;
+  border: 1px solid black;
+  height: 42%;
+  width: 5px;
+  background-color: red;
+}
+
+.switch {
+  width: 50px;
+  height: 25px;
+  border: 2px solid var(--clockColor);
+  margin-bottom: 1rem;
+  border-radius: 35%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.switch span {
+  float: right;
+}
+.sun,
+.moon {
+  position: absolute;
+}
+
+.sun {
+  left: 0;
+  fill: var(--clockColor);
+}
+.moon {
+  right: 0;
+  display: none;
+  fill: var(--clockColor);
+}
